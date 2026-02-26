@@ -25,12 +25,9 @@ export default function RootLayout({
         <SpotlightCursor />
         <Navbar />
         <SocialSidebar />
-        <main className="min-h-screen">
-          <AnimatedLayout>
-            {children}
-          </AnimatedLayout>
-        </main>
-        <Footer />
+        <AnimatedLayout>
+          {children}
+        </AnimatedLayout>
       </body>
     </html>
   )

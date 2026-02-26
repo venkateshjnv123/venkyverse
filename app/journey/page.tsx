@@ -1,4 +1,5 @@
 import SystemBackground from '@/components/home/SystemBackground'
+import Footer from '@/components/Footer'
 
 const experiences = [
   {
@@ -90,6 +91,7 @@ const timeline = [
 
 export default function JourneyPage() {
   return (
+    <>
     <div className="relative">
       <SystemBackground density="low" />
       
@@ -97,55 +99,99 @@ export default function JourneyPage() {
         
         {/* Section 02 - Experience */}
         <section className="py-20">
-          <div className="flex items-baseline gap-6 mb-12">
+          <div className="flex items-baseline gap-6 mb-16">
             <span className="text-emerald-400/60 text-sm font-mono tracking-widest uppercase">02</span>
             <h2 className="text-4xl font-bold text-slate-100">Experience</h2>
           </div>
 
-          <div className="relative space-y-8">
-            <div className="absolute left-0 top-8 bottom-8 w-px bg-emerald-400/40" />
-            
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-12">
-                <div className="absolute left-0 top-8 w-3 h-3 rounded-full bg-emerald-400/60" />
-                
-                <div className="bg-slate-900/40 border border-slate-800 rounded-lg p-8 transition-all duration-300 hover:border-slate-700 hover:-translate-y-1">
-                  <div className="mb-6">
-                    <div className="flex items-baseline gap-3 mb-2">
-                      <h3 className="text-2xl font-semibold text-white">
-                        {exp.company}
-                      </h3>
-                      <span className="text-slate-300 font-medium">— {exp.role}</span>
-                    </div>
-                    <p className="text-sm text-emerald-400/80 tracking-wide">{exp.period}</p>
-                  </div>
+          {/* Centered alternating timeline */}
+          <div className="relative">
+            {/* Center vertical line */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-emerald-400/40" />
 
-                  <ul className="space-y-4 mb-6">
-                    {exp.description.map((item, idx) => (
-                      <li key={idx} className="flex items-start text-slate-400 leading-relaxed">
-                        <span className="text-emerald-400/70 mr-3 mt-1.5">•</span>
-                        <span dangerouslySetInnerHTML={{ __html: item }} />
-                      </li>
-                    ))}
-                  </ul>
+            <div className="space-y-12 md:space-y-16">
+              {experiences.map((exp, index) => {
+                const isLeft = index % 2 === 0
+                return (
+                  <div key={index} className="relative md:grid md:grid-cols-[50%_0%_50%] md:items-start">
+                    {/* Timeline node */}
+                    <div className="hidden md:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-400/70 border-2 border-slate-900 z-10" />
 
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-xs font-mono bg-slate-900/60 border border-slate-700/50 text-slate-400 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {isLeft ? (
+                      <>
+                        {/* Left: Card */}
+                        <div className="md:pr-8">
+                          <div className="bg-slate-900/40 border border-slate-800 rounded-lg p-8 transition-all duration-300 hover:border-slate-700">
+                            <div className="mb-6">
+                              <h3 className="text-2xl font-semibold text-white mb-1">{exp.company}</h3>
+                              <p className="text-slate-300 font-medium">{exp.role}</p>
+                              <p className="text-sm text-emerald-400/80 tracking-wide mt-1">{exp.period}</p>
+                            </div>
+                            <ul className="space-y-3 mb-6">
+                              {exp.description.map((item, idx) => (
+                                <li key={idx} className="flex items-start text-slate-400 leading-relaxed">
+                                  <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 mr-3 shrink-0" />
+                                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="flex flex-wrap gap-2">
+                              {exp.tech.map((tech) => (
+                                <span key={tech} className="px-3 py-1 text-xs font-mono bg-slate-900/60 border border-slate-800 text-slate-400 rounded">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Center: Empty spacer */}
+                        <div />
+                        
+                        {/* Right: Date */}
+                        <div className="hidden md:flex md:items-center md:pl-8">
+                          <p className="text-sm text-emerald-400/80 font-mono tracking-wide">{exp.period}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        {/* Left: Date */}
+                        <div className="hidden md:flex md:items-center md:justify-end md:pr-8">
+                          <p className="text-sm text-emerald-400/80 font-mono tracking-wide">{exp.period}</p>
+                        </div>
+                        
+                        {/* Center: Empty spacer */}
+                        <div />
+                        
+                        {/* Right: Card */}
+                        <div className="md:pl-8">
+                          <div className="bg-slate-900/40 border border-slate-800 rounded-lg p-8 transition-all duration-300 hover:border-slate-700">
+                            <div className="mb-6">
+                              <h3 className="text-2xl font-semibold text-white mb-1">{exp.company}</h3>
+                              <p className="text-slate-300 font-medium">{exp.role}</p>
+                              <p className="text-sm text-emerald-400/80 tracking-wide mt-1">{exp.period}</p>
+                            </div>
+                            <ul className="space-y-3 mb-6">
+                              {exp.description.map((item, idx) => (
+                                <li key={idx} className="flex items-start text-slate-400 leading-relaxed">
+                                  <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 mr-3 shrink-0" />
+                                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="flex flex-wrap gap-2">
+                              {exp.tech.map((tech) => (
+                                <span key={tech} className="px-3 py-1 text-xs font-mono bg-slate-900/60 border border-slate-800 text-slate-400 rounded">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
-                </div>
-              </div>
-            ))}
+                )
+              })}
+            </div>
           </div>
         </section>
-
-        <div className="h-px bg-emerald-400/10" />
 
         {/* Section 03 - Selected Projects */}
         <section className="py-20">
@@ -179,7 +225,7 @@ export default function JourneyPage() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-mono bg-slate-900/40 border border-slate-700/40 text-slate-400 rounded"
+                      className="px-3 py-1 text-xs font-mono bg-slate-900/40 border border-slate-800 text-slate-400 rounded"
                     >
                       {tech}
                     </span>
@@ -190,32 +236,9 @@ export default function JourneyPage() {
           </div>
         </section>
 
-        <div className="h-px bg-emerald-400/10" />
-
-        {/* Section 04 - Timeline */}
-        {/* <section className="py-20">
-          <div className="flex items-baseline gap-6 mb-12">
-            <span className="text-emerald-400/60 text-sm font-mono tracking-widest uppercase">04</span>
-            <h2 className="text-4xl font-bold text-slate-100">Timeline</h2>
-          </div>
-
-          <div className="max-w-2xl">
-            {timeline.map((item, index) => (
-              <div key={index} className="flex items-center gap-8 mb-6">
-                <span className="text-emerald-400/70 text-sm font-mono w-16">{item.year}</span>
-                <div className="flex items-center gap-4 flex-1">
-                  <div className="w-2 h-2 rounded-full bg-emerald-400/40" />
-                  {index < timeline.length - 1 && (
-                    <div className="absolute left-[5.5rem] w-px h-6 bg-emerald-400/20 translate-y-6" />
-                  )}
-                  <span className="text-slate-400">{item.event}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section> */}
-
       </div>
     </div>
+    <Footer />
+    </>
   )
 }

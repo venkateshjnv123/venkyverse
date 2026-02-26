@@ -44,7 +44,7 @@ export default function SocialSidebar() {
   ]
 
   return (
-    <div className="fixed right-8 bottom-0 z-40 hidden md:flex flex-col items-center gap-6 opacity-50 hover:opacity-100 transition-all duration-300">
+    <div className="fixed right-8 bottom-0 z-40 hidden md:flex flex-col items-center gap-6 transition-all duration-300">
       <div className="flex flex-col items-center">
         {socials.map((s) => (
           <a
@@ -53,7 +53,7 @@ export default function SocialSidebar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={s.label}
-            className="text-slate-500 hover:text-emerald-400 transition-all duration-300 hover:-translate-y-1 my-3"
+            className="text-slate-400 hover:text-emerald-400 hover:scale-110 transition-all duration-200 my-3"
           >
             {s.icon}
           </a>

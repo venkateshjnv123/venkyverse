@@ -3,15 +3,10 @@ import SystemBackground from '@/components/home/SystemBackground'
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative h-screen overflow-hidden">
       <SystemBackground density="high" />
-      <div className="relative z-10">
+      <div className="relative z-10 h-full flex items-center justify-center">
         <HeroSection />
-        <div className="max-w-4xl mx-auto px-6 pb-32 text-center">
-          <p className="text-slate-400 text-sm tracking-wide">
-            Currently building scalable backend systems and exploring AI infrastructure.
-          </p>
-        </div>
       </div>
     </div>
   )

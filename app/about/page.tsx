@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import SystemBackground from '@/components/home/SystemBackground'
+import Footer from '@/components/Footer'
 
 export default function AboutPage() {
   const techSystems = [
@@ -22,6 +23,7 @@ export default function AboutPage() {
   ]
 
   return (
+    <>
     <div className="relative">
       <SystemBackground density="medium" />
       
@@ -31,22 +33,31 @@ export default function AboutPage() {
         <section className="py-20">
           <div className="flex items-baseline gap-6 mb-12">
             <span className="text-emerald-400/60 text-sm font-mono tracking-widest uppercase">01</span>
-            <h1 className="text-4xl font-bold text-slate-100">Who I Am</h1>
+            <h1 className="text-4xl font-bold text-slate-100">Who Am I</h1>
           </div>
           
-          <div className="grid md:grid-cols-[1fr_auto] gap-16 items-start">
-            <div className="space-y-4 text-slate-400 leading-relaxed">
-              <p>
-                I design and scale backend systems. From API architecture to distributed services, I focus on reliability, performance, and long-term maintainability.
-              </p>
+          <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                <p className="text-slate-400 leading-relaxed">
+                  I design and scale backend systems. From API architecture to distributed services, I focus on reliability, performance, and long-term maintainability.
+                </p>
+              </div>
               
-              <p>
-                I graduated from Indian Institute of Technology, Jodhpur (Mechanical Engineering). My engineering foundation shaped how I think about systems — structured, efficient, and built to last.
-              </p>
+              <div className="flex items-start gap-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                <p className="text-slate-400 leading-relaxed">
+                  I graduated from Indian Institute of Technology, Jodhpur (Mechanical Engineering). My engineering foundation shaped how I think about systems — structured, efficient, and built to last.
+                </p>
+              </div>
               
-              <p>
-                I&apos;ve worked on payment systems, automation frameworks, and enterprise backend architectures. 
-              </p>
+              <div className="flex items-start gap-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                <p className="text-slate-400 leading-relaxed">
+                  I&apos;ve worked on payment systems, automation frameworks, and enterprise backend architectures.
+                </p>
+              </div>
             </div>
 
             <div className="flex justify-center md:justify-end">
@@ -73,7 +84,7 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {techSystems.map((system, index) => (
-              <div key={index} className="border border-slate-700/30 rounded-lg p-6 bg-slate-900/20">
+              <div key={index} className="border border-slate-800 rounded-lg p-6 bg-slate-900/20">
                 <h3 className="text-sm font-medium text-slate-300 mb-3 tracking-wide">{system.category}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{system.items}</p>
               </div>
@@ -88,18 +99,26 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold text-slate-100">Toward AI Systems</h2>
           </div>
 
-          <div className="space-y-4 text-slate-400 leading-relaxed max-w-3xl">
-            <p>
-              I&apos;m exploring how backend systems intersect with AI infrastructure — model serving, orchestration layers, and the infrastructure that makes AI products reliable at scale.
-            </p>
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <div className="flex items-start gap-3">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
+              <p className="text-slate-400 leading-relaxed">
+                I&apos;m exploring how backend systems intersect with AI infrastructure — model serving, orchestration layers, and the infrastructure that makes AI products reliable at scale.
+              </p>
+            </div>
             
-            <p>
-              The shift from traditional backend to AI-forward systems requires rethinking latency constraints, cost optimization, and service boundaries. I&apos;m building toward that intersection.
-            </p>
+            <div className="flex items-start gap-3">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
+              <p className="text-slate-400 leading-relaxed">
+                The shift from traditional backend to AI-forward systems requires rethinking latency constraints, cost optimization, and service boundaries. I&apos;m building toward that intersection.
+              </p>
+            </div>
           </div>
         </section>
 
       </div>
     </div>
+    <Footer />
+    </>
   )
 }

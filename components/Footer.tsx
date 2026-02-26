@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: 'rgba(11, 14, 20, 0.95)', borderTop: '1px solid rgba(0, 255, 65, 0.1)' }}>
-      <div className="max-w-7xl mx-auto px-6 py-8">
+    <footer className="bg-slate-950/95 border-t border-slate-800">
+      <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-text-secondary text-sm">
+          <div className="text-slate-500 text-sm">
             © 2025 Venkatesh Patnala. Building scalable systems.
           </div>
           
@@ -12,21 +12,21 @@ export default function Footer() {
               href="https://github.com/venkateshjnv123" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent-green transition-colors"
+              className="text-slate-400 hover:text-emerald-400 hover:underline transition-colors duration-200"
             >
               GitHub
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://linkedin.com/in/venkatesh-patnala-927a521b0" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent-green transition-colors"
+              className="text-slate-400 hover:text-emerald-400 hover:underline transition-colors duration-200"
             >
               LinkedIn
             </a>
             <a 
               href="mailto:venkateshjnv123@gmail.com"
-              className="text-text-secondary hover:text-accent-green transition-colors"
+              className="text-slate-400 hover:text-emerald-400 hover:underline transition-colors duration-200"
             >
               Email
             </a>
