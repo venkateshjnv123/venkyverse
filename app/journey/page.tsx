@@ -1,5 +1,4 @@
-import SystemBackground from '@/components/home/SystemBackground'
-import Footer from '@/components/Footer'
+import CollapsibleProjects from '@/components/CollapsibleProjects'
 
 const experiences = [
   {
@@ -7,9 +6,9 @@ const experiences = [
     role: 'SDE-1',
     period: 'Apr 2025 - Present',
     description: [
-      'Designed payment orchestration microservices routing across Razorpay, Juspay and Paytm, handling <span class="font-semibold text-white">1000+</span> transactions/day with <span class="font-semibold text-white">98%</span> reliability',
-      'Built C2C workflows including seller/buyer monetization and chat payments using Spring Boot, Redis, RabbitMQ. Supported <span class="font-semibold text-white">100+</span> users/min and <span class="font-semibold text-white">50+</span> daily payments',
-      'Enabled bulk upload/download and analytics dashboards, improving sales conversion by <span class="font-semibold text-white">50%</span>',
+      'Designed payment orchestration microservices routing across Razorpay, Juspay and Paytm, handling <span style="color:#1D9E75;font-weight:700;font-size:1.05em">1000+</span> transactions/day with <span style="color:#1D9E75;font-weight:700;font-size:1.05em">98%</span> reliability',
+      'Built C2C workflows including seller/buyer monetization and chat payments using Spring Boot, Redis, RabbitMQ. Supported <span style="color:#1D9E75;font-weight:700;font-size:1.05em">100+</span> users/min and <span style="color:#1D9E75;font-weight:700;font-size:1.05em">50+</span> daily payments',
+      'Enabled bulk upload/download and analytics dashboards, improving sales conversion by <span style="color:#1D9E75;font-weight:700;font-size:1.05em">50%</span>',
       'Developed Verify-360 platform for end-to-end vehicle document verification'
     ],
     tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'RabbitMQ']
@@ -19,8 +18,8 @@ const experiences = [
     role: 'Software Engineer',
     period: 'Feb 2024 - Mar 2025',
     description: [
-      'Streamlined automation for WFM module tests using Java and Selenium with GraphQL and REST coverage, reducing sanity testing duration by <span class="font-semibold text-white">4 hours</span>',
-      'Co-developed modern API automation framework eliminating DTO boilerplate, reducing test-case creation time by <span class="font-semibold text-white">70%</span>'
+      'Streamlined automation for WFM module tests using Java and Selenium with GraphQL and REST coverage, reducing sanity testing duration by <span style="color:#1D9E75;font-weight:700;font-size:1.05em">4 hours</span>',
+      'Co-developed modern API automation framework eliminating DTO boilerplate, reducing test-case creation time by <span style="color:#1D9E75;font-weight:700;font-size:1.05em">70%</span>'
     ],
     tech: ['Java', 'Selenium', 'GraphQL', 'REST', 'Jenkins']
   },
@@ -29,9 +28,9 @@ const experiences = [
     role: 'Software Development Engineer',
     period: 'Aug 2023 - Dec 2023',
     description: [
-      'Led development of <span class="font-semibold text-white">5</span> HRMS modules with a team of <span class="font-semibold text-white">2</span>, delivering cost-cutting of <span class="font-semibold text-white">$50k/year</span>',
-      'Implemented Expense and Access management, used by <span class="font-semibold text-white">900+</span> employees',
-      'Improved analytics modules integrating data from <span class="font-semibold text-white">4</span> databases, reducing report generation time by <span class="font-semibold text-white">50%</span>'
+      'Led development of <span style="color:#1D9E75;font-weight:700;font-size:1.05em">5</span> HRMS modules with a team of <span style="color:#1D9E75;font-weight:700;font-size:1.05em">2</span>, delivering cost-cutting of <span style="color:#1D9E75;font-weight:700;font-size:1.05em">$50k/year</span>',
+      'Implemented Expense and Access management, used by <span style="color:#1D9E75;font-weight:700;font-size:1.05em">900+</span> employees',
+      'Improved analytics modules integrating data from <span style="color:#1D9E75;font-weight:700;font-size:1.05em">4</span> databases, reducing report generation time by <span style="color:#1D9E75;font-weight:700;font-size:1.05em">50%</span>'
     ],
     tech: ['Node.js', 'PostgreSQL', 'MongoDB', 'REST APIs']
   },
@@ -40,8 +39,8 @@ const experiences = [
     role: 'SDE Intern',
     period: 'Feb 2022 - July 2022',
     description: [
-      'Integrated Microsoft Clarity, Google Analytics, Redux, Firebase to collect user data, achieving <span class="font-semibold text-white">3x</span> more user interactivity',
-      'Automated deployment process using GitLab-AWS, reducing deployment time by <span class="font-semibold text-white">70%</span>'
+      'Integrated Microsoft Clarity, Google Analytics, Redux, Firebase to collect user data, achieving <span style="color:#1D9E75;font-weight:700;font-size:1.05em">3x</span> more user interactivity',
+      'Automated deployment process using GitLab-AWS, reducing deployment time by <span style="color:#1D9E75;font-weight:700;font-size:1.05em">70%</span>'
     ],
     tech: ['AWS', 'Firebase', 'Redux', 'GitLab CI/CD']
   }
@@ -93,9 +92,7 @@ export default function JourneyPage() {
   return (
     <>
     <div className="relative">
-      <SystemBackground density="low" />
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         
         {/* Section 02 - Experience */}
         <section className="py-20">
@@ -200,45 +197,30 @@ export default function JourneyPage() {
             <h2 className="text-4xl font-bold text-slate-100">My Work</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="border border-slate-800 rounded-lg p-6 bg-slate-900/10 hover:-translate-y-1 transition-transform duration-300"
-              >
-                <h3 className="text-xl font-semibold text-slate-100 mb-3">{project.title}</h3>
-                <p className="text-slate-400 text-sm mb-4">{project.summary}</p>
-
-                <div className="space-y-3 mb-4">
-                  <div>
-                    <p className="text-xs font-medium text-emerald-400/70 mb-1">Problem Solved:</p>
-                    <p className="text-slate-400 text-sm">{project.problem}</p>
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-medium text-emerald-400/70 mb-1">Impact:</p>
-                    <p className="text-slate-400 text-sm">{project.impact}</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs font-mono bg-slate-900/40 border border-slate-800 text-slate-400 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="border border-dashed border-slate-700 rounded-lg p-6 bg-slate-900/10">
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-xl font-semibold text-slate-100">Learning AI</h3>
               </div>
-            ))}
+              <span className="inline-block text-xs text-emerald-400/80 font-mono mb-3">🔧 Building</span>
+              <p className="text-slate-400 text-sm">Currently working on a new project — details coming soon.</p>
+            </div>
           </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="border border-dashed border-slate-700 rounded-lg p-6 bg-slate-900/10">
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-xl font-semibold text-slate-100">Portfolio Website</h3>
+              </div>
+              <p className="text-slate-400 text-sm">Recently built this portfolio website to showcase my work and journey using AI tools.</p>
+            </div>
+          </div>
+
+          <CollapsibleProjects projects={projects} />
         </section>
 
       </div>
     </div>
-    <Footer />
     </>
   )
 }

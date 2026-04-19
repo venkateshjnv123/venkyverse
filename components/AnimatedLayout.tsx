@@ -7,14 +7,15 @@ import PageTransition from './PageTransition'
 
 interface AnimatedLayoutProps {
   children: ReactNode
+  className?: string
 }
 
-export default function AnimatedLayout({ children }: AnimatedLayoutProps) {
+export default function AnimatedLayout({ children, className }: AnimatedLayoutProps) {
   const pathname = usePathname()
 
   return (
     <AnimatePresence mode="wait" initial={false}>
-      <PageTransition key={pathname}>
+      <PageTransition key={pathname} className={className}>
         {children}
       </PageTransition>
     </AnimatePresence>

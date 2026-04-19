@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
-import SystemBackground from '@/components/home/SystemBackground'
 
 export default function ConnectPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -40,9 +39,7 @@ export default function ConnectPage() {
 
   return (
     <div className="relative h-screen overflow-hidden">
-      <SystemBackground density="low" />
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <section className="py-20">
         <div className="flex items-baseline gap-6 mb-12">
           <span className="text-emerald-400/60 text-sm font-mono tracking-widest uppercase">05</span>
