@@ -1,15 +1,11 @@
 import Link from 'next/link'
-import SystemBackground from '@/components/home/SystemBackground'
 import allPosts from '@/data/posts'
-import Footer from '@/components/Footer'
 
 export default function WritingPage() {
   return (
     <>
     <div className="relative">
-      <SystemBackground density="low" />
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-20">
+      <div className="max-w-5xl mx-auto px-6 py-20">
         <div className="flex items-baseline gap-6 mb-16">
           <span className="text-emerald-400/60 text-sm font-mono tracking-widest uppercase">04</span>
           <h1 className="text-4xl font-bold text-slate-100">Writing</h1>
@@ -62,7 +58,6 @@ export default function WritingPage() {
         </div>
       </div>
     </div>
-    <Footer />
     </>
   )
 }

@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import SystemBackground from '@/components/home/SystemBackground'
-import Footer from '@/components/Footer'
 
 export default function AboutPage() {
   const techSystems = [
@@ -25,9 +23,7 @@ export default function AboutPage() {
   return (
     <>
     <div className="relative">
-      <SystemBackground density="medium" />
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         
         {/* Section 01 - Who I Am */}
         <section className="py-20">
@@ -37,27 +33,18 @@ export default function AboutPage() {
           </div>
           
           <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
-                <p className="text-slate-400 leading-relaxed">
-                  I design and scale backend systems. From API architecture to distributed services, I focus on reliability, performance, and long-term maintainability.
-                </p>
-              </div>
+            <div className="space-y-5">
+              <p className="text-slate-400 leading-relaxed">
+                I studied Mechanical Engineering at IIT Jodhpur — not the most obvious path to backend engineering. But thinking about stress loads, failure points, and system efficiency turned out to be exactly the right training. I just swapped metal for microservices.
+              </p>
               
-              <div className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
-                <p className="text-slate-400 leading-relaxed">
-                  I graduated from Indian Institute of Technology, Jodhpur (Mechanical Engineering). My engineering foundation shaped how I think about systems — structured, efficient, and built to last.
-                </p>
-              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Today I design and scale backend systems at CARS24 — payment orchestration, distributed services, the kind of infrastructure that needs to hold at 2am on a Friday. I care about reliability, long-term architecture, and systems that don&apos;t need to be rewritten six months later.
+              </p>
               
-              <div className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0" />
-                <p className="text-slate-400 leading-relaxed">
-                  I&apos;ve worked on payment systems, automation frameworks, and enterprise backend architectures.
-                </p>
-              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Outside work I read a lot, follow cricket more than I should, and occasionally disappear into the mountains. I&apos;m building this site to document both sides — the technical journey and everything else.
+              </p>
             </div>
 
             <div className="flex justify-center md:justify-end">
@@ -118,7 +105,6 @@ export default function AboutPage() {
 
       </div>
     </div>
-    <Footer />
     </>
   )
 }
